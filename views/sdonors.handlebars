@@ -1,0 +1,58 @@
+<style>
+    body{
+        background-color:
+        black; 
+    }
+    .topnav {
+    overflow: hidden;
+    background-color: #333;
+    padding:15px;
+}
+
+.topnav a {
+    position:relative;
+    left:20%;
+    display:inline;
+    color: #f2f2f2;
+    text-align: center;
+    padding:20px;
+    text-decoration: none;
+}
+
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+</style>
+<div class="topnav">
+
+   <a href="staff"> Appointments </a> 
+   <a href="call"> callback details </a>
+   <a href="sdonors"> donors details </a>
+   <a href="/users/logout"> LogOut </a>
+</div>
+
+{{#each ideas}}
+<div class="card card-body mb-2">
+    <p>Donor name: <b>{{dname}} </b></p>
+    <p>BloodGroup: <b>{{bgroup}} </b></p>
+    <p>QuGenderntity:  <b>{{dgender}}</b></p>
+    <p>Date of Birth:  <b>{{ddob}} </b></p>
+    <p>Number:  <b>{{dnumb}}</b></p>
+    <p>Address:  <b>{{daddress}}</b></p>
+    <p>District:  <b>{{ddistrict}}</b></p>
+    <p>State:  <b>{{dstate}}</b></p>
+
+
+    
+ <!--    <form method="post" action="orders/{{id}}?_method=DELETE">
+
+    <input type ="hidden" name="_method" value="DELETE">
+     <input type ="submit" class ="btn btn-danger btn-block" value="Delete">
+
+    </form> <-->
+</div> 
+{{else}}
+ <p><b> no people  </b> </p>
+{{/each}}

@@ -1,0 +1,170 @@
+
+{{#each errors}}
+  <div class="alert alert-danger">{{text}}</div>
+{{else}}
+
+{{/each}}
+
+<style>
+ {
+    box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+
+.header {
+    background: url("/img/online-consultation-sonal-hospital-header.jpg");
+	     background-size: cover;
+		  background-position:center;
+		  background-repeat:no-repeat;
+
+	    padding: 200px;
+    text-align: center;
+    }
+
+
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    padding:15px;
+}
+
+.topnav a {
+    position:relative;
+    left:20%;
+    display:inline;
+    color: #f2f2f2;
+    text-align: center;
+    padding:20px;
+    text-decoration: none;
+}
+
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+
+.column {
+    float: left;
+    padding: 10px;
+}
+
+
+.column.side {
+    margin-left: 2%;
+    width: 47%;
+    font-size:18.5px;
+}
+
+/* Middle column */
+
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media (max-width: 600px) {
+    .column.side, .column.middle {
+        width: 100%;
+    }
+}
+
+form {
+
+
+margin:auto;
+
+
+}
+.container {
+    padding: 50px;
+border:1px solid black;
+
+margin-left:10px; 
+width:500px;
+
+
+}
+input[type=text], input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color:gray;
+    color: white;
+    padding:10px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+
+</style>
+
+ <div class="container">
+<form action="/{{idea.id}}?_method=PUT" method="post">
+
+ <input type="hidden" name="_method" value ="PUT">
+   
+       <h3><b>Edit Appointment </b></h3> <br>
+   <b>Name:<b><input type="text" placeholder="FullName" Name="nam" value="{{idea.nam}}">
+   <b>Age:<b><input type="text" placeholder="AGE" Name="age"value="{{idea.age}}">
+   <b>Gender:<b><input type="radio" name="gender" value="male" checked/>Male
+                <input type="radio" name="gender" value="female" />Female<br><br>
+   <b>Available Doctor:<b><select name="avail" value="{{idea.avail}}"><option value="{{idea.avail}}">{{idea.avail}}</option><option value="venkatesh">DR.Venkatesh-Cardiologist</option>
+    <option value="ramesh">DR.Ramesh-Allergist</option>
+    <option value="anil_shrivastav">DR.Anil-ENT </option>
+    <option value="hari">DR.Hari-EYE SPECALIST</option>
+ <option value="suresh">DR.Suresh-BONE SPECALIST</option>
+ <option value="dileep">DR.Dileep-DENTIST</option>
+</select><br><br>
+
+ <b>Doctor Timings:<b><select name="timing"><option value="{{idea.timing}}">{{idea.timing}}</option>
+ <option value="morning">Morning(9:00 to 10:00)</option>
+ <option value="morning">Morning(10:00 to 11:00)</option>
+ <option value="morning">Morning(11:00 to 12:00)</option>
+ <option value="morning">Morning(12:00 to 12:30)</option>
+ <option value="afternoon">Afternoon(2:00 to 3:00)</option>
+  <option value="afternoon">Afternoon(3:00 to 4:00)</option>
+   <option value="afternoon">Afternoon(4:00 to 5:00)</option>
+    <option value="evening">Evening(6:00 to 7:00)</option>
+     <option value="evening">Evening(7:00 to 8:00)</option>
+      <option value="evening">Evening(8:00 to 9:00)</option>
+      <option value="night">Night(EMERGENCY)</option>
+      </select><br><br>
+      <b>Problem Description<b>
+      <textarea rows="6" cols="50" placeholder="Problem Description" name="problem_description" > 
+{{idea.problem_description}}
+      </textarea>
+      <b>PhoneNumber:<b><input type="text" placeholder="PhoneNumber" Name="phone_number" value="{{idea.phone_number}}">
+<button type="submit" class="btn btn-primary">Submit</button>
+
+   
+   </form>
+    
+  
+  
+</div>  
+</div>
+
+
+

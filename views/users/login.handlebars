@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Login </title>
+		<style type="text/css">
+			*
+
+body
+{
+	margin: 0;
+	padding: 0;
+	background: url('/img/bg.jpg');
+	background-size: cover;
+	background-position: center;
+	font-family: sans-serif;
+}
+
+
+.loginBox
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 320px;
+	height: 420px;
+	padding: 80px 40px;
+	box-sizing: border-box;
+	background: #000;
+}
+.avatar
+{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	position: absolute;
+	top: -50px;
+	left: calc(50% - 50px);
+}
+h1
+{
+	margin: 0;
+	padding: 0 0 20px;
+	text-align: center;
+	font-size: 22px;
+}
+.loginBox p
+{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	color: #fff;
+}
+.loginBox input
+{
+	width: 100%;
+	margin-bottom: 20px;
+}
+.loginBox input[type="text"],
+.loginBox input[type="password"]
+{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+}
+::placeholder
+{
+	color: rgba(255,255,255,.5);
+}
+.loginBox input[type="submit"]
+{
+	border: none;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+	background: #c226ff;
+	cursor: pointer;
+	border-radius: 20px;
+}
+.loginBox input[type="submit"]:hover
+{
+	background: #efed40;
+	color: #262626;
+}
+.loginBox a
+{
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+		</style>
+	</head>
+	<body>      
+		<div class="loginBox">
+		<img src="/img/usr.jpg" class="avatar">
+			<h1>Log In Here</h1>
+			<form action="/users/login" method="post">
+				<p>Username</p>
+				<input type="text" name="email" placeholder="Enter Email" required >
+				<p>Password</p>
+				<input type="password" name="password" placeholder="Password" required>
+				<input type="submit" value="Sign In">
+				<a href="/users/register"><input type="button" value="Sign up">  </a>
+			</form>
+			
+		</div>
+        
+		
+	</body>
+</html>

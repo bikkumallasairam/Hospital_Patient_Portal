@@ -1,0 +1,45 @@
+<style>
+    .topnav {
+    overflow: hidden;
+    background-color: #333;
+    padding:15px;
+}
+
+.topnav a {
+    position:relative;
+    left:20%;
+    display:inline;
+    color: #f2f2f2;
+    text-align: center;
+    padding:20px;
+    text-decoration: none;
+}
+
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+</style>
+
+<div class="topnav">
+
+   <a href="staff"> Appointments </a> 
+   <a href="call"> callback details </a>
+   <a href="sdonors"> donors details </a>
+   <a href="/users/logout"> LogOut </a>
+</div>
+
+{{#each ideas}}
+<div class="card card-body mb-2">
+    <p>Name: <b>{{cnam}} </b>
+    <p>Problem Description:  <b>{{reason}}</b></p>
+    <p>Phone number:  <b>{{mob}}</b></p>
+     
+
+    
+    
+</div> 
+{{else}}
+ <p><b> No  Appointment Fixed1 </b> </p>
+{{/each}}

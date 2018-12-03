@@ -1,0 +1,54 @@
+<style>
+    .topnav {
+    overflow: hidden;
+    background-color: #333;
+    padding:15px;
+}
+
+.topnav a {
+    position:relative;
+    left:20%;
+    display:inline;
+    color: #f2f2f2;
+    text-align: center;
+    padding:20px;
+    text-decoration: none;
+}
+
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+</style>
+<div class="topnav">
+
+   <a href="staff"> Appointments </a> 
+   <a href="call"> callback details </a>
+   <a href="sdonors"> donors details </a>
+   <a href="/users/logout"> LogOut </a>
+</div>
+
+{{#each ideas}}
+<div class="card card-body mb-2">
+    <p>Name: <b>{{nam}} </b></p>
+    <p>Age:  <b>{{age}}</b></p>
+    <p>Gender:  <b>{{gender}} </b></p>
+    <p>Doctor Selected:  <b>{{avail}}</b></p>
+    <p>Timing Selected:  <b>{{timing}}</b></p>
+    <p>Problem Description:  <b>{{problem_description}}</b></p>
+    <p>Phone number:  <b>{{phone_number}}</b></p>
+
+
+    
+    <form method="post" action="{{id}}?_method=DELETE">
+
+    <input type ="hidden" name="_method" value="DELETE">
+     
+
+    </form>
+    
+</div> 
+{{else}}
+ <p><b> No  Appointment Fixed1 </b> </p>
+{{/each}}
